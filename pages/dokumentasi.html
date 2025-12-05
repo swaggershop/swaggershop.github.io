@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwaggerDesixn || Welcome</title>
+    <!-- Load Tailwind CSS dari CDN & Config -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./../tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/dokumentasi.css">
+</head>
+<body class="bg-gray-50">
+  
+  <!-- NAVBAR -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+<a href="#" class="flex items-center text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-700">
+  <i class="fas fa-store mr-2"></i> SwaggerDesixn
+</a>
+
+    <!-- Menu Desktop -->
+    <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <li><a href="./../index.html" class="hover:text-purple-600 transition nav-active">Home</a></li>
+      <li><a href="#services" class="hover:text-purple-600 transition">Layanan</a></li>
+      <li><a href="#docs" class="hover:text-purple-600 transition">Dokumentasi</a></li>
+      <li><a href="#contact" class="hover:text-purple-600 transition">Kontak</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="md:hidden flex items-center">
+      <button id="hamburger" class="text-gray-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Menu Mobile -->
+<div id="mobileMenu" class="max-h-0 overflow-hidden md:hidden bg-white shadow-md transition-all duration-500">
+  <ul class="flex flex-col px-6 py-4 space-y-4 text-gray-700 font-medium">
+    <li><a href="./../index.html" class="hover:text-purple-600 transition nav-active">Home</a></li>
+    <li><a href="#services" class="hover:text-purple-600 transition">Layanan</a></li>
+    <li><a href="#docs" class="hover:text-purple-600 transition">Dokumentasi</a></li>
+    <li><a href="#contact" class="hover:text-purple-600 transition">Kontak</a></li>
+  </ul>
+</div>
+
+</nav>
+  
+    <!-- Welcome Area Section -->
+    <section id="welcome" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center fade-in-up" style="animation-delay: 0.2s;">
+              
+             <div data-aos="fade-up" class="text-purple-600 text-4xl mb-4 mt-12">
+                <i class="fas fa-book"></i>
+            </div>
+
+
+                <h2 data-aos="fade-up"
+                class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Dokumentasi</span>
+                </h2>
+                <p data-aos="fade-up"
+                class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Panduan lengkap penggunaan semua layanan kami. Temukan detail paket, fitur, dan contoh hasil desain.
+            </div>
+        </div>
+    </section>
+
+<div data-aos="fade-up" data-aos-delay="100" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-6 flex items-start border-l-4 border-purple-500 mb-6 -mt-12">
+    <!-- Icon -->
+    <div class="text-purple-500 text-3xl mr-4">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <!-- Konten -->
+    <div>
+        <p class="text-gray-800 font-semibold">
+            Dokumentasi ini selalu diperbarui dengan fitur-fitur terbaru.
+        </p>
+    </div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
+
+    <!-- Card 1 -->
+    <div data-aos="fade-up"data-aos-delay="200" class="bg-white rounded-xl shadow-lg p-6">
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full mr-4">
+                <i class="fas fa-rocket text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Mudah Dipahami</h3>
+        </div>
+        <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Instruksi jelas</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Langkah-langkah terstruktur</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Contoh nyata</li>
+        </ul>
+    </div>
+
+    <!-- Card 2 -->
+    <div data-aos="fade-up" data-aos-delay="250" class="bg-white rounded-xl shadow-lg p-6">
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mr-4">
+                <i class="fas fa-lightbulb text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Lengkap & Terstruktur</h3>
+        </div>
+        <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Pembahasan fitur semua paket</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Ilustrasi & diagram</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Referensi tambahan</li>
+        </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-xl shadow-lg p-6">
+        <div class="flex items-center mb-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-pink-100 text-pink-600 rounded-full mr-4">
+                <i class="fas fa-sync-alt text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Selalu Diperbarui</h3>
+        </div>
+        <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Update fitur terbaru</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Contoh desain baru</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tips & trik terbaru</li>
+        </ul>
+    </div>
+
+</div>
+
+<section class="max-w-6xl mx-auto px-6 py-20 -mt-10" data-aos="fade-up" data-aos-duration="800">
+    <div class="bg-white rounded-xl shadow-lg p-6 container mx-auto px-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Daftar Isi Dokumentasi</h2>
+        
+        <!-- Menu -->
+        <ul class="space-y-2 text-gray-700">
+            <!-- Menu Utama 1 -->
+            <li>
+                <button class="w-full flex justify-between items-center px-4 py-2 rounded hover:bg-gray-100 font-semibold focus:outline-none" onclick="toggleSubmenu('submenu1')">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-book text-purple-600"></i>
+                        Pengantar
+                    </div>
+                    <i class="fas fa-chevron-down transition-transform duration-300" id="icon-submenu1"></i>
+                </button>
+                <ul class="ml-8 mt-2 submenu" id="submenu1">
+                    <li class="py-1"><a href="#pengantar1" class="hover:text-purple-600">Tentang Swagger Desixn</a></li>
+                    <li class="py-1"><a href="#pengantar2" class="hover:text-purple-600">Cara Menggunakan Dokumentasi</a></li>
+                </ul>
+            </li>
+
+            <!-- Menu Utama 2 -->
+            <li>
+                <button class="w-full flex justify-between items-center px-4 py-2 rounded hover:bg-gray-100 font-semibold focus:outline-none" onclick="toggleSubmenu('submenu2')">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-cogs text-blue-600"></i>
+                        Fitur & Paket
+                    </div>
+                    <i class="fas fa-chevron-down transition-transform duration-300" id="icon-submenu2"></i>
+                </button>
+                <ul class="ml-8 mt-2 submenu" id="submenu2">
+                    <li class="py-1"><a href="#paket1" class="hover:text-purple-600">Paket Desain Profesional</a></li>
+                    <li class="py-1"><a href="#paket2" class="hover:text-purple-600">Paket Desain Jubel Online</a></li>
+                    <li class="py-1">
+                        <button class="w-full flex justify-between items-center font-semibold focus:outline-none" onclick="toggleSubmenu('submenu2-1')">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-laptop-code text-green-600"></i>
+                                Jasa Website
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="icon-submenu2-1"></i>
+                        </button>
+                        <ul class="ml-6 mt-1 submenu" id="submenu2-1">
+                            <li class="py-1"><a href="#web1" class="hover:text-purple-600">Statis HTML/CSS/JS</a></li>
+                            <li class="py-1"><a href="#web2" class="hover:text-purple-600">Full Dev Backend & Frontend</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Menu Utama 3 -->
+            <li>
+                <a href="#kontak" class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 font-semibold">
+                    <i class="fas fa-headset text-pink-600"></i>
+                    Kontak & Support
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="pengantar" class="max-w-6xl mx-auto px-6 py-20" data-aos="fade-up" data-aos-duration="800">
+    <!-- Header Section -->
+    <div class="text-center mb-12 container mx-auto px-6">
+        <div class="text-purple-600 text-4xl mb-4">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+            Pengantar
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl">
+            Bagian pengantar ini menjelaskan secara singkat tentang Swagger Desixn dan bagaimana Anda dapat menggunakan dokumentasi ini
+            untuk memahami layanan dan paket yang kami sediakan.
+        </p>
+    </div>
+
+    <!-- Konten Pengantar -->
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <i class="fas fa-book-open text-purple-600"></i>
+                Tentang Swagger Desixn
+            </h3>
+            <p class="text-gray-700">
+                Swagger Desixn adalah platform yang menyediakan layanan desain visual, grafis, dan pembuatan website. Dokumentasi ini
+                bertujuan memudahkan Anda memahami semua fitur, paket, dan cara penggunaan layanan kami secara efektif.
+            </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+                <i class="fas fa-play-circle text-purple-600"></i>
+                Cara Menggunakan Dokumentasi
+            </h3>
+            <p class="text-gray-700">
+                Gunakan menu navigasi di sebelah atas atau daftar isi untuk menelusuri topik-topik yang ada. Setiap bagian
+                memberikan penjelasan, contoh, dan panduan langkah demi langkah untuk memaksimalkan layanan kami.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="kontak" class="max-w-6xl mx-auto px-6 py-20" data-aos="fade-up" data-aos-duration="800">
+    <!-- Header -->
+    <div class="text-center mb-12 container mx-auto px-6">
+        <div class="text-pink-600 text-4xl mb-4">
+            <i class="fas fa-headset"></i>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+            Kontak & Support
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl">
+            Hubungi kami melalui berbagai channel di bawah ini untuk pertanyaan atau dukungan.
+        </p>
+    </div>
+
+    <!-- Konten Support -->
+    <div class="grid md:grid-cols-4 gap-8">
+        <!-- Email -->
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow text-center">
+            <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-500 text-white rounded-full mb-4 text-2xl">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
+            <p class="text-gray-700 mb-3">support@swagshop.com</p>
+            <a href="mailto:support@swagshop.com" class="inline-block px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
+                Kirim Email
+            </a>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow text-center">
+            <div class="w-16 h-16 mx-auto flex items-center justify-center bg-green-500 text-white rounded-full mb-4 text-2xl">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">WhatsApp</h3>
+            <p class="text-gray-700 mb-3">+62 812-3456-7890</p>
+            <a href="https://wa.me/6281234567890" target="_blank" class="inline-block px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition">
+                Chat Sekarang
+            </a>
+        </div>
+
+        <!-- Telegram -->
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow text-center">
+            <div class="w-16 h-16 mx-auto flex items-center justify-center bg-blue-500 text-white rounded-full mb-4 text-2xl">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Telegram</h3>
+            <p class="text-gray-700 mb-3">@SwagShopSupport</p>
+            <a href="https://t.me/SwagShopSupport" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
+                Chat Sekarang
+            </a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="bg-white rounded-xl shadow-lg p-6 card-hover-glow text-center">
+            <div class="w-16 h-16 mx-auto flex items-center justify-center bg-pink-600 text-white rounded-full mb-4 text-2xl">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Instagram</h3>
+            <p class="text-gray-700 mb-3">@SwagShopID</p>
+            <a href="https://instagram.com/SwagShopID" target="_blank" class="inline-block px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">
+                Kunjungi Profil
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer with Social Media -->
+    <footer class="bg-gray-950 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cube text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">SwaggerDesixn</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">Kami adalah platform terpercaya yang menyediakan berbagai produk dan layanan digital berkualitas tinggi untuk kebutuhan Anda.</p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex gap-4">
+                        <a href="https://github.com/Reyhan1601" target="_blank" class="social-icon w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com/swagger.envy" target="_blank" class="social-icon w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white transition-all">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/6283845587816" target="_blank" class="social-icon w-12 h-12 bg-green-600 hover:bg-green-500 rounded-xl flex items-center justify-center text-white transition-all">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <!-- Telegram -->
+                          <a href="https://t.me/USERNAME_TELEGRAMMU" class="social-icon w-12 h-12 bg-blue-500 hover:bg-blue-400 rounded-xl flex items-center justify-center text-white transition-all">
+                              <i class="fab fa-telegram-plane text-xl"></i>
+                          </a>
+                          
+                          <!-- Store Website -->
+                          <a href="https://LINK_STORE_WEBSITE_MU" class="social-icon w-12 h-12 bg-green-600 hover:bg-green-500 rounded-xl flex items-center justify-center text-white transition-all">
+                              <i class="fas fa-store text-xl"></i>
+                          </a>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-envelope text-indigo-500"></i>
+                            <span>raihanazhar160110
+                            @gmail.com</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-phone text-indigo-500"></i>
+                            <span>+62 838-4558-7816</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-indigo-500"></i>
+                            <span>Bandung, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2024 SwaggerDesixn. All rights reserved. Made with <i class="fas fa-heart text-red-500"></i> in Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./../js/base.js"></script>
+<script src="./../js/dokumentasi.js"></script>
+
+</body>
+</html>
+

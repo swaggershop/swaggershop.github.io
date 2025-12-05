@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwaggerDesixn || Welcome</title>
+    <!-- Load Tailwind CSS dari CDN & Config -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body class="bg-gray-50">
+  
+  <!-- NAVBAR -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
+<a href="#" class="flex items-center text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-700">
+  <i class="fas fa-store mr-2"></i> SwaggerDesixn
+</a>
+
+    <!-- Menu Desktop -->
+    <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+      <li><a href="#home" class="hover:text-purple-600 transition nav-active">Home</a></li>
+      <li><a href="#services" class="hover:text-purple-600 transition">Layanan</a></li>
+      <li><a href="./pages/dokumentasi.html" class="hover:text-purple-600 transition">Dokumentasi</a></li>
+      <li><a href="#contact" class="hover:text-purple-600 transition">Kontak</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <div class="md:hidden flex items-center">
+      <button id="hamburger" class="text-gray-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Menu Mobile -->
+<div id="mobileMenu" class="max-h-0 overflow-hidden md:hidden bg-white shadow-md transition-all duration-500">
+  <ul class="flex flex-col px-6 py-4 space-y-4 text-gray-700 font-medium">
+    <li><a href="#home" class="hover:text-purple-600 transition nav-active">Home</a></li>
+    <li><a href="#services" class="hover:text-purple-600 transition">Layanan</a></li>
+    <li><a href="./pages/dokumentasi.html" class="hover:text-purple-600 transition">Dokumentasi</a></li>
+    <li><a href="#contact" class="hover:text-purple-600 transition">Kontak</a></li>
+  </ul>
+</div>
+
+</nav>
+  
+
+    <!-- Hero Slider Section -->
+    <section class="slider-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/000000/FFFFFF?text=Slide+1'" alt="Technology">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Selamat Datang</h1>
+                <p class="text-xl md:text-2xl mb-6 opacity-90">Temukan Solusi Digital Terbaik</p>
+                <div class="flex gap-4 justify-center">
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-code mr-2"></i>Development</span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-palette mr-2"></i>Design</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1a202c/FFFFFF?text=Slide+2'" alt="Business">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Inovasi Tanpa Batas</h1>
+                <p class="text-xl md:text-2xl mb-6 opacity-90">Wujudkan Ide Menjadi Kenyataan</p>
+                <div class="flex gap-4 justify-center">
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-rocket mr-2"></i>Innovation</span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-lightbulb mr-2"></i>Ideas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/5a67d8/FFFFFF?text=Slide+3'" alt="Team">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Tim Profesional</h1>
+                <p class="text-xl md:text-2xl mb-6 opacity-90">Bekerja Sama Untuk Kesuksesan Anda</p>
+                <div class="flex gap-4 justify-center">
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-users mr-2"></i>Teamwork</span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-handshake mr-2"></i>Partnership</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/38a169/FFFFFF?text=Slide+4'" alt="Workspace">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Mulai Sekarang</h1>
+                <p class="text-xl md:text-2xl mb-6 opacity-90">Bersama Kami Menuju Masa Depan</p>
+                <div class="flex gap-4 justify-center">
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-star mr-2"></i>Quality</span>
+                    <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm"><i class="fas fa-trophy mr-2"></i>Success</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Dots -->
+        <div class="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+            <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all active-dot" data-index="0"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="1"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="2"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-index="3"></button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator text-white cursor-pointer" onclick="scrollToWelcome()">
+            <i class="fas fa-chevron-down text-3xl opacity-70 hover:opacity-100 transition-opacity"></i>
+        </div>
+    </section>
+
+    <!-- Welcome Area Section -->
+    <section id="welcome" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center fade-in-up" style="animation-delay: 0.2s;">
+                <div 
+                data-aos="fade-up"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 rounded-full text-indigo-600 text-sm font-medium mb-6">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Welcome to Our Platform</span>
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h2 data-aos="fade-up"
+                class="text-4xl md:text-6xl font-bold mb-6">
+                    <span>Selamat Datang Di</span><br />
+                    <span class="gradient-text">Swagger Desixn</span>
+                </h2>
+                <p data-aos="fade-up"
+                class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Temukan Beragam Layanan Kreatif Terbaik untuk Kebutuhan Anda
+                    Kami menyediakan berbagai jasa profesional seperti Desain Visual, Desain Grafis, Desain Web, hingga pembuatan Kaos dengan konsep yang unik.
+                    Selain itu, kami juga menerima pembuatan Website berbasis Laravel yang dapat disesuaikan sepenuhnya dengan ide dan kebutuhan Anda.
+                    Setiap proyek dikerjakan dengan fokus pada kualitas, kreativitas, dan kepuasan Anda.
+                </p>
+                <!-- Decorative Icons -->
+                <div data-aos="fade-up"
+                class="flex justify-center gap-8 mb-10">
+                    <div class="float-animation" style="animation-delay: 0s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-shopping-bag text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="float-animation" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-400 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="float-animation" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-star text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="float-animation" style="animation-delay: 0.6s;">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-400 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Go to Marketplace Button -->
+                <a href="#" 
+                data-aos="fade-up" data-aos-duration="800" data-aos-delay="20"
+                class="btn-glow inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                    <i class="fas fa-store text-xl"></i>
+                    <span>Go to Marketplace</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<section class="py-20 bg-gray-50">
+    <div class="gap-6 max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-14">
+            <h3 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Layanan Utama Kami</h3>
+            <p data-aos="fade-up" class="text-gray-600 max-w-2xl mx-auto">
+                Berbagai layanan kreatif & digital yang siap membantu kebutuhan personal maupun bisnis Anda.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+
+            <!-- Layanan 1 -->
+            <div data-aos="fade-up" class="bg-white p-8 rounded-2xl shadow-md text-center hover:shadow-xl transition-all card-hover-glow">
+                <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+                    <i class="fas fa-globe text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Desain Web</h4>
+                <p class="text-gray-600 text-sm">Pembuatan tampilan website modern, responsif, dan elegan.</p>
+            </div>
+
+            <!-- Layanan 2 -->
+            <div data-aos="fade-up" class="bg-white p-8 rounded-2xl shadow-md text-center hover:shadow-xl transition-all card-hover-glow">
+                <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+                    <i class="fas fa-layer-group text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Desain Grafis</h4>
+                <p class="text-gray-600 text-sm">Banner, poster, feed, logo, dan kebutuhan branding lainnya.</p>
+            </div>
+
+            <!-- Layanan 3 -->
+            <div data-aos="fade-up" class="bg-white p-8 rounded-2xl shadow-md text-center hover:shadow-xl transition-all card-hover-glow">
+                <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-green-100 text-green-600">
+                    <i class="fas fa-tshirt text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Desain Kaos</h4>
+                <p class="text-gray-600 text-sm">Custom desain kaos sesuai konsep, karakter, atau ide Anda.</p>
+            </div>
+
+            <!-- Layanan 4 -->
+            <div data-aos="fade-up" class="bg-white p-8 rounded-2xl shadow-md text-center hover:shadow-xl transition-all card-hover-glow">
+                <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-rose-100 text-rose-600">
+                    <i class="fas fa-code text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Website Laravel</h4>
+                <p class="text-gray-600 text-sm">Pembuatan website custom berbasis Laravel sesuai kebutuhan Anda.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <!-- Title -->
+        <div class="text-center mb-12">
+            <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-800">Promo Spesial Akhir Tahun</h2>
+            <p data-aos="fade-up" class="text-gray-600 mt-2">Dapatkan penawaran terbaik untuk semua layanan desain & web</p>
+        </div>
+
+        <!-- ==== Swiper Slider ==== -->
+        <div data-aos="fade-up" class="relative">
+            <!-- Slider Container -->
+            <div class="swiper myPromoSlider">
+                <div class="swiper-wrapper">
+
+                    <!-- ==== SLIDE 1 ==== -->
+                    <div class="swiper-slide">
+                        <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-palette text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Paket Desain Profesional</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Branding, konten promosi, desain edukatif, identitas visual, dan custom desain sesuai ide Anda.
+                                </p>
+                                <div class="mb-3">
+                                    <span class="text-red-500 line-through text-lg font-bold">Rp 50.000+</span>
+                                    <span class="text-green-600 font-extrabold text-xl ml-2">Rp 5.000+</span>
+                                </div>
+                                <a href="#"
+                                   class="inline-flex items-center gap-2 px-4 py-2 border border-purple-500 text-purple-600 rounded-full hover:bg-purple-500 hover:text-white transition">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==== SLIDE 2 ==== -->
+                    <div class="swiper-slide">
+                        <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-store text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Paket Desain Jualan Online</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Testimoni, poster, banner, payment desain, template jualan, dan custom sesuai referensi.
+                                </p>
+                                <div class="mb-3">
+                                    <span class="text-red-500 line-through text-lg font-bold">Rp 10.000+</span>
+                                    <span class="text-green-600 font-extrabold text-xl ml-2">Rp 1.000+</span>
+                                </div>
+                                <a href="#"
+                                   class="inline-flex items-center gap-2 px-4 py-2 border border-blue-500 text-blue-600 rounded-full hover:bg-blue-500 hover:text-white transition">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ==== SLIDE 3 ==== -->
+                    <div class="swiper-slide">
+                        <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-lime-600 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-user-graduate text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Desain Untuk Pelajar</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Desain poster, banner, hingga tugas sekolah. Bebas custom sesuai kebutuhan.
+                                </p>
+                                <div class="mb-3">
+                                    <span class="text-red-500 line-through text-lg font-bold">Rp 10.000</span>
+                                    <span class="text-green-600 font-extrabold text-xl ml-2">Rp 5.000</span>
+                                </div>
+                                <a href="#"
+                                   class="inline-flex items-center gap-2 px-4 py-2 border border-green-500 text-green-600 rounded-full hover:bg-green-500 hover:text-white transition">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ==== SLIDE 4 ==== -->
+                    <div class="swiper-slide">
+                        <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-code text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Jasa Website Statis</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Tailwind / Bootstrap / Native CSS. Harga tergantung halaman & tingkat kesulitan.
+                                </p>
+                                <div class="mb-3">
+                                    <span class="text-red-500 line-through text-lg font-bold">Rp 70.000+</span>
+                                    <span class="text-green-600 font-extrabold text-xl ml-2">Rp 20.000+</span>
+                                </div>
+                                <a href="#"
+                                   class="inline-flex items-center gap-2 px-4 py-2 border border-orange-500 text-orange-600 rounded-full hover:bg-orange-500 hover:text-white transition">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==== SLIDE 5 ==== -->
+                    <div class="swiper-slide">
+                        <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-server text-white text-2xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Fullstack Website (Coming Soon)</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Frontend, backend, database, API—dibangun profesional dan scalable.
+                                </p>
+                                <div class="mb-3">
+                                    <span class="text-red-500 line-through text-lg font-bold">Rp 9.000.000+</span>
+                                    <span class="text-green-600 font-extrabold text-xl ml-2">Rp 3.000.000+</span>
+                                </div>
+                                <a href="#"
+                                   class="inline-flex items-center gap-2 px-4 py-2 border border-red-500 text-red-600 rounded-full hover:bg-red-500 hover:text-white transition">
+                                    Lihat Detail
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="flex items-center gap-6 bg-white p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200">
+                        
+                        <!-- Icon Info -->
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+                          <i class="fas fa-info text-white text-2xl"></i>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="flex-1">
+                          <h3 class="text-2xl font-bold text-gray-800 mb-2">Promo Lainnya</h3>
+                          <p class="text-gray-600 mb-3">
+                            Ingin melihat promo lainnya? Kunjungi website kami untuk informasi lengkap dan penawaran terbaru.
+                          </p>
+                          
+                          <!-- Button -->
+                          <a href="https://example.com" target="_blank"
+                             class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition">
+                            Kunjungi Website
+                            <i class="fas fa-arrow-right"></i>
+                          </a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Features Section -->
+<section class="py-20 bg-white">
+    <div class="gap-6 max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mengapa Memilih Kami?</h3>
+            <p data-aos="fade-up" class="text-gray-600 max-w-2xl mx-auto">Kami menyediakan layanan terbaik dengan kualitas premium</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- 1. Cepat & Responsif -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-bolt text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Cepat & Responsif</h4>
+                <p class="text-gray-600">Layanan super cepat dengan respon yang maksimal untuk kenyamanan Anda.</p>
+            </div>
+
+            <!-- 2. Aman & Terpercaya -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-shield-alt text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Aman & Terpercaya</h4>
+                <p class="text-gray-600">Data Anda terjaga dengan sistem keamanan tingkat tinggi dan enkripsi modern.</p>
+            </div>
+
+            <!-- 3. Support 24/7 -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-headset text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Support 24/7</h4>
+                <p class="text-gray-600">Kami siap membantu kapan saja untuk memastikan kebutuhan Anda terpenuhi.</p>
+            </div>
+
+            <!-- 4. Desain Rapi & Modern -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-pencil-ruler text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Desain Rapi & Modern</h4>
+                <p class="text-gray-600">Desain profesional dengan tampilan estetis yang disesuaikan dengan kebutuhan brand Anda.</p>
+            </div>
+
+            <!-- 5. Harga Terjangkau -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-tags text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Harga Terjangkau</h4>
+                <p class="text-gray-600">Biaya fleksibel tanpa mengurangi kualitas—cocok untuk kebutuhan personal maupun bisnis.</p>
+            </div>
+
+            <!-- 6. Custom Sesuai Ide Anda -->
+            <div data-aos="fade-up" class="card-hover bg-gradient-to-br from-red-50 to-rose-50 p-8 rounded-3xl text-center card-hover-glow">
+                <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <i class="fas fa-lightbulb text-white text-3xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Custom Sesuai Ide Anda</h4>
+                <p class="text-gray-600">Semua layanan dapat disesuaikan sepenuhnya sesuai konsep, gaya, dan kebutuhan unik Anda.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl md:text-5xl font-bold text-white mb-6">Siap Untuk Memulai?</h3>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Bergabunglah bersama ribuan pelanggan yang sudah mempercayai kami</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="btn-glow inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Daftar Sekarang</span>
+                </a>
+                <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all">
+                    <i class="fas fa-store"></i>
+                    <span>Lihat Website</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Social Media -->
+    <footer class="bg-gray-950 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-cube text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">SwaggerDesixn</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">Kami adalah platform terpercaya yang menyediakan berbagai produk dan layanan digital berkualitas tinggi untuk kebutuhan Anda.</p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex gap-4">
+                        <a href="https://github.com/Reyhan1601" target="_blank" class="social-icon w-12 h-12 bg-gray-800 hover:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com/swagger.envy" target="_blank" class="social-icon w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white transition-all">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/6283845587816" target="_blank" class="social-icon w-12 h-12 bg-green-600 hover:bg-green-500 rounded-xl flex items-center justify-center text-white transition-all">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <!-- Telegram -->
+                          <a href="https://t.me/USERNAME_TELEGRAMMU" class="social-icon w-12 h-12 bg-blue-500 hover:bg-blue-400 rounded-xl flex items-center justify-center text-white transition-all">
+                              <i class="fab fa-telegram-plane text-xl"></i>
+                          </a>
+                          
+                          <!-- Store Website -->
+                          <a href="https://LINK_STORE_WEBSITE_MU" class="social-icon w-12 h-12 bg-green-600 hover:bg-green-500 rounded-xl flex items-center justify-center text-white transition-all">
+                              <i class="fas fa-store text-xl"></i>
+                          </a>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-envelope text-indigo-500"></i>
+                            <span>raihanazhar160110
+                            @gmail.com</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-phone text-indigo-500"></i>
+                            <span>+62 838-4558-7816</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-indigo-500"></i>
+                            <span>Bandung, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2024 SwaggerDesixn. All rights reserved. Made with <i class="fas fa-heart text-red-500"></i> in Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/base.js"></script>
+<script src="./js/home.js"></script>
+
+</body>
+</html>
+
