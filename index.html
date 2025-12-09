@@ -1,47 +1,24 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwagShop.my.id | Reyhan - Swagger Design</title>
+    <title>Maintenance | SwagShop.my.id</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
-            scroll-behavior: smooth;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            transition: background 0.5s ease, color 0.5s ease;
+            background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 50%, #1b263b 100%);
+            min-height: 100vh;
+            overflow: hidden;
         }
 
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        /* Dark Mode Styles */
-        .dark body {
-            background: linear-gradient(180deg, #020617 0%, #0c1445 50%, #1e1b4b 100%);
-            color: #e2e8f0;
-        }
-
-        .dark .space-bg {
-            background: radial-gradient(ellipse at top, #1e3a5f 0%, #0f172a 50%, #020617 100%);
-        }
-
-        /* Light Mode Styles */
-        .light body {
-            background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
-            color: #0f172a;
-        }
-
-        .light .space-bg {
-            background: radial-gradient(ellipse at top, #7dd3fc 0%, #bae6fd 50%, #e0f2fe 100%);
-        }
-
-        /* Stars Animation */
+        /* Stars Background */
         .stars {
             position: fixed;
             top: 0;
@@ -60,10 +37,6 @@
             animation: twinkle var(--duration) ease-in-out infinite;
         }
 
-        .light .star {
-            background: rgba(59, 130, 246, 0.5);
-        }
-
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.2); }
@@ -72,1278 +45,432 @@
         /* Shooting Star */
         .shooting-star {
             position: absolute;
-            width: 100px;
-            height: 2px;
+            width: 4px;
+            height: 4px;
             background: linear-gradient(90deg, #60a5fa, transparent);
-            animation: shoot 3s linear infinite;
+            border-radius: 50%;
+            animation: shoot 3s ease-in-out infinite;
             opacity: 0;
         }
 
         @keyframes shoot {
-            0% { transform: translateX(-100px) translateY(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateX(calc(100vw + 100px)) translateY(300px); opacity: 0; }
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-500px) translateY(500px);
+                opacity: 0;
+            }
         }
 
-        /* Nebula Effect */
-        .nebula {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 0;
+        /* Floating Astronaut */
+        .astronaut {
+            animation: float 6s ease-in-out infinite;
         }
 
-        .light .nebula {
-            opacity: 0.2;
-        }
-
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #38bdf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .light .gradient-text {
-            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #0369a1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Gradient Button */
-        .gradient-btn {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            transition: all 0.3s ease;
-        }
-
-        .gradient-btn:hover {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
-        }
-
-        /* Floating Animation */
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
         }
 
-        @keyframes floatReverse {
-            0%, 100% { transform: translateY(-15px) rotate(-2deg); }
-            50% { transform: translateY(5px) rotate(0deg); }
-        }
-
-        .float-1 { animation: float 6s ease-in-out infinite; }
-        .float-2 { animation: floatReverse 7s ease-in-out infinite; }
-        .float-3 { animation: float 8s ease-in-out infinite 1s; }
-
-        /* Planet Animation */
-        @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
-        }
-
-        .orbit {
+        /* Planet */
+        .planet {
             animation: orbit 20s linear infinite;
         }
 
-        /* Card Styles */
-        .card-glass {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .light .card-glass {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-
-        .card-glass:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(96, 165, 250, 0.5);
-            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
-        }
-
-        /* Tech Cards Marquee */
-        .marquee-container {
-            overflow: hidden;
-            mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-        }
-
-        .marquee {
-            display: flex;
-            animation: marquee 30s linear infinite;
-        }
-
-        .marquee:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .marquee-reverse {
-            animation: marquee-reverse 25s linear infinite;
-        }
-
-        @keyframes marquee-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Tech Card */
-        .tech-card {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(91, 33, 182, 0.2));
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .light .tech-card {
-            background: linear-gradient(135deg, rgba(191, 219, 254, 0.8), rgba(196, 181, 253, 0.6));
-            border: 1px solid rgba(59, 130, 246, 0.4);
-        }
-
-        .tech-card:hover {
-            transform: scale(1.1) rotate(5deg);
-            border-color: #60a5fa;
-            box-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
         }
 
         /* Glow Effect */
         .glow {
-            box-shadow: 0 0 60px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 60px rgba(59, 130, 246, 0.5),
+                        0 0 100px rgba(59, 130, 246, 0.3),
+                        0 0 140px rgba(59, 130, 246, 0.1);
         }
 
-        .glow-text {
-            text-shadow: 0 0 40px rgba(96, 165, 250, 0.8);
+        .text-glow {
+            text-shadow: 0 0 40px rgba(59, 130, 246, 0.8),
+                         0 0 80px rgba(59, 130, 246, 0.4);
         }
 
         /* Pulse Ring */
-        @keyframes pulse-ring {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.5); opacity: 0; }
+        .pulse-ring {
+            animation: pulseRing 2s ease-out infinite;
         }
 
-        .pulse-ring::before {
-            content: '';
+        @keyframes pulseRing {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
+            background-size: 200% 100%;
+            animation: progressMove 2s linear infinite;
+        }
+
+        @keyframes progressMove {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        /* Countdown Box */
+        .countdown-box {
+            background: rgba(30, 64, 175, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Nebula Effect */
+        .nebula {
             position: absolute;
-            inset: -10px;
-            border: 2px solid #3b82f6;
-            border-radius: inherit;
-            animation: pulse-ring 2s ease-out infinite;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: nebulaPulse 8s ease-in-out infinite;
         }
 
-        /* Typing Effect */
-        .typing-cursor {
-            border-right: 3px solid #60a5fa;
-            animation: blink 0.8s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        /* Slide Animations */
-        .slide-up {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .slide-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: all 0.8s ease-out;
-        }
-
-        .slide-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: all 0.8s ease-out;
-        }
-
-        .slide-up.visible,
-        .slide-left.visible,
-        .slide-right.visible {
-            opacity: 1;
-            transform: translate(0);
-        }
-
-        /* Navbar */
-        .navbar-glass {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(96, 165, 250, 0.1);
-        }
-
-        .light .navbar-glass {
-            background: rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-
-        .light ::-webkit-scrollbar-track {
-            background: #e0f2fe;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #3b82f6, #8b5cf6);
-            border-radius: 10px;
-        }
-
-        /* Footer Divider */
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, #3b82f6, transparent);
-        }
-
-        /* Social Icon Hover */
-        .social-hover {
-            transition: all 0.3s ease;
-        }
-
-        .social-hover:hover {
-            transform: translateY(-5px) scale(1.2);
-        }
-
-        .social-hover.instagram:hover { color: #E4405F; box-shadow: 0 0 30px rgba(228, 64, 95, 0.5); }
-        .social-hover.github:hover { color: #fff; box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
-        .social-hover.whatsapp:hover { color: #25D366; box-shadow: 0 0 30px rgba(37, 211, 102, 0.5); }
-        .social-hover.globe:hover { color: #3b82f6; box-shadow: 0 0 30px rgba(59, 130, 246, 0.5); }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
-            transition: all 0.5s ease;
-        }
-
-        .light .theme-toggle {
-            background: linear-gradient(135deg, #fbbf24, #f97316);
+        @keyframes nebulaPulse {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.1); }
         }
 
         /* Rocket Animation */
-        @keyframes rocket {
-            0%, 100% { transform: translateY(0) rotate(-45deg); }
-            50% { transform: translateY(-10px) rotate(-45deg); }
-        }
-
         .rocket {
-            animation: rocket 2s ease-in-out infinite;
+            animation: rocketFloat 4s ease-in-out infinite;
         }
 
-        /* Service Card Icon */
-        .service-icon {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(96, 165, 250, 0.3);
+        @keyframes rocketFloat {
+            0%, 100% { transform: translateY(0) rotate(45deg); }
+            50% { transform: translateY(-20px) rotate(45deg); }
         }
 
-        .light .service-icon {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+        .rocket-flame {
+            animation: flame 0.2s ease-in-out infinite alternate;
         }
 
-        /* Location Pin Pulse */
-        @keyframes pin-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+        @keyframes flame {
+            0% { opacity: 0.8; transform: scaleY(1); }
+            100% { opacity: 1; transform: scaleY(1.2); }
         }
 
-        .pin-pulse {
-            animation: pin-pulse 2s ease-out infinite;
+        /* Input Focus */
+        input:focus {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Social Icon Hover */
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Satellite */
+        .satellite {
+            animation: satelliteOrbit 15s linear infinite;
+        }
+
+        @keyframes satelliteOrbit {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        /* Loading Dots */
+        .loading-dot {
+            animation: loadingDot 1.4s ease-in-out infinite both;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dot:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes loadingDot {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
         }
     </style>
 </head>
-<body class="space-bg min-h-screen overflow-x-hidden">
+<body class="text-white flex items-center justify-center min-h-screen relative">
 
     <!-- Stars Background -->
     <div class="stars" id="stars"></div>
 
     <!-- Nebula Effects -->
-    <div class="nebula bg-blue-500/30 top-0 left-0"></div>
-    <div class="nebula bg-purple-500/20 top-1/3 right-0"></div>
-    <div class="nebula bg-cyan-500/20 bottom-0 left-1/4"></div>
+    <div class="nebula w-96 h-96 bg-blue-500 -top-48 -left-48" style="position: fixed;"></div>
+    <div class="nebula w-80 h-80 bg-purple-500 -bottom-40 -right-40" style="position: fixed;"></div>
+    <div class="nebula w-64 h-64 bg-pink-500 top-1/2 left-1/4" style="position: fixed; animation-delay: 2s;"></div>
 
     <!-- Shooting Stars -->
-    <div class="shooting-star" style="top: 10%; animation-delay: 0s;"></div>
-    <div class="shooting-star" style="top: 30%; animation-delay: 2s;"></div>
-    <div class="shooting-star" style="top: 50%; animation-delay: 4s;"></div>
+    <div class="shooting-star" style="top: 10%; right: 10%; animation-delay: 0s;"></div>
+    <div class="shooting-star" style="top: 20%; right: 30%; animation-delay: 2s;"></div>
+    <div class="shooting-star" style="top: 5%; right: 50%; animation-delay: 4s;"></div>
 
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 navbar-glass">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#home" class="flex items-center space-x-3">
-                    <div class="relative">
-                        <div class="w-12 h-12 rounded-xl gradient-btn flex items-center justify-center font-bold text-xl font-orbitron">
-                            S
-                        </div>
-                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
-                    </div>
-                    <div>
-                        <span class="text-lg font-bold font-orbitron gradient-text">SwagShop</span>
-                        <p class="text-xs text-gray-400">.my.id</p>
-                    </div>
-                </a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
-                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                    <a href="#services" class="hover:text-blue-400 transition-colors">Services</a>
-                    <a href="#portfolio" class="hover:text-blue-400 transition-colors">Portfolio</a>
-                    <a href="#contact" class="gradient-btn px-6 py-2 rounded-full font-semibold">Contact</a>
-                    
-                    <!-- Theme Toggle -->
-                    <button id="themeToggle" class="theme-toggle w-12 h-12 rounded-full flex items-center justify-center">
-                        <i class="fas fa-moon text-xl dark-icon"></i>
-                        <i class="fas fa-sun text-xl light-icon hidden"></i>
-                    </button>
+    <!-- Satellite -->
+    <div class="satellite fixed top-1/4 left-1/2" style="z-index: 1;">
+        <i class="fas fa-satellite text-2xl text-blue-300 opacity-60"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        
+        <!-- Logo -->
+        <div class="mb-8 relative inline-block">
+            <div class="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-30 pulse-ring"></div>
+            <div class="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center glow">
+                <span class="text-4xl font-bold">S</span>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text text-glow">
+            Sedang Dalam Perbaikan
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-blue-200 mb-2">
+            swagshop.my.id
+        </p>
+
+        <!-- Astronaut Illustration -->
+        <div class="astronaut my-10 relative">
+            <div class="relative inline-block">
+                <!-- Rocket -->
+                <div class="rocket inline-block">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Rocket Body -->
+                        <ellipse cx="60" cy="50" rx="20" ry="35" fill="url(#rocketGrad)"/>
+                        <!-- Rocket Top -->
+                        <path d="M60 10 L45 35 L75 35 Z" fill="#ef4444"/>
+                        <!-- Window -->
+                        <circle cx="60" cy="45" r="10" fill="#1e3a5f"/>
+                        <circle cx="60" cy="45" r="7" fill="#60a5fa"/>
+                        <circle cx="57" cy="42" r="2" fill="white" opacity="0.6"/>
+                        <!-- Fins -->
+                        <path d="M40 70 L30 90 L45 75 Z" fill="#3b82f6"/>
+                        <path d="M80 70 L90 90 L75 75 Z" fill="#3b82f6"/>
+                        <!-- Flame -->
+                        <g class="rocket-flame">
+                            <ellipse cx="60" cy="95" rx="10" ry="15" fill="#f97316"/>
+                            <ellipse cx="60" cy="92" rx="6" ry="10" fill="#fbbf24"/>
+                            <ellipse cx="60" cy="90" rx="3" ry="6" fill="#fef3c7"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="rocketGrad" x1="40" y1="50" x2="80" y2="50">
+                                <stop offset="0%" stop-color="#e2e8f0"/>
+                                <stop offset="50%" stop-color="#f8fafc"/>
+                                <stop offset="100%" stop-color="#cbd5e1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
 
-                <div class="flex items-center space-x-4 md:hidden">
-                    <button id="themeToggleMobile" class="theme-toggle w-10 h-10 rounded-full flex items-center justify-center">
-                        <i class="fas fa-moon dark-icon"></i>
-                        <i class="fas fa-sun light-icon hidden"></i>
-                    </button>
-                    <button id="menuBtn" class="text-2xl">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                <!-- Floating Elements -->
+                <div class="absolute -top-4 -right-8 planet">
+                    <div class="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500"></div>
+                </div>
+                <div class="absolute -bottom-2 -left-10 planet" style="animation-delay: 5s; animation-duration: 15s;">
+                    <div class="w-4 h-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden">
-            <div class="px-6 py-4 space-y-4 border-t border-blue-500/20">
-                <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
-                <a href="#about" class="block py-2 hover:text-blue-400">About</a>
-                <a href="#services" class="block py-2 hover:text-blue-400">Services</a>
-                <a href="#portfolio" class="block py-2 hover:text-blue-400">Portfolio</a>
-                <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
+        <!-- Description -->
+        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            Kami sedang melakukan perbaikan dan peningkatan untuk memberikan pengalaman terbaik. 
+            Website akan segera kembali dengan tampilan dan fitur yang lebih baik!
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="max-w-md mx-auto mb-10">
+            <div class="flex justify-between text-sm text-blue-300 mb-2">
+                <span>Progress</span>
+                <span>75%</span>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
-        <div class="max-w-7xl mx-auto px-6 py-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="slide-left relative z-10">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-rocket rocket text-blue-400"></i>
-                        <span class="text-blue-400 font-medium">Welcome to the Universe of Creativity</span>
-                    </div>
-                    
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-orbitron mb-4">
-                        Hi, I'm <span class="gradient-text glow-text">Reyhan</span>
-                    </h1>
-                    
-                    <div class="text-xl md:text-2xl mb-6 h-10 flex items-center">
-                        <span id="typeText" class="text-blue-300"></span>
-                        <span class="typing-cursor ml-1">&nbsp;</span>
-                    </div>
-                    
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed max-w-xl">
-                        Founder of <strong class="text-blue-400 font-orbitron">Swagger Design</strong> & 
-                        <strong class="text-purple-400 font-orbitron">SwagShop</strong>. 
-                        Menjelajahi galaksi kreativitas tanpa batas — dari desain grafis hingga pengembangan web full stack.
-                    </p>
-
-                    <div class="flex flex-wrap gap-4 mb-10">
-                        <a href="#contact" class="gradient-btn px-8 py-4 rounded-full font-semibold flex items-center space-x-2">
-                            <i class="fas fa-paper-plane"></i>
-                            <span>Hubungi Saya</span>
-                        </a>
-                        <a href="#portfolio" class="border-2 border-blue-500 px-8 py-4 rounded-full font-semibold flex items-center space-x-2 hover:bg-blue-500/20 transition-all">
-                            <i class="fas fa-eye"></i>
-                            <span>Lihat Portfolio</span>
-                        </a>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="flex items-center space-x-6">
-                        <span class="text-gray-500 text-sm">Follow me:</span>
-                        <a href="#" class="social-hover instagram w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        <a href="#" class="social-hover github w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="#" class="social-hover whatsapp w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                        <a href="#" class="social-hover globe w-10 h-10 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400">
-                            <i class="fas fa-globe text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right - Profile Image -->
-                <div class="slide-right relative flex justify-center">
-                    <div class="relative">
-                        <!-- Orbital Ring -->
-                        <div class="absolute inset-0 w-80 h-80 md:w-96 md:h-96 border-2 border-blue-500/20 rounded-full" style="transform: rotateX(60deg);"></div>
-                        
-                        <!-- Orbiting Planet -->
-                        <div class="absolute w-80 h-80 md:w-96 md:h-96 flex items-center justify-center">
-                            <div class="orbit">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 glow"></div>
-                            </div>
-                        </div>
-
-                        <!-- Profile Container -->
-                        <div class="relative pulse-ring w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/50 glow">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Reyhan" class="w-full h-full object-cover">
-                        </div>
-
-                        <!-- Floating Elements -->
-                        <div class="absolute -top-5 right-0 float-1">
-                            <div class="tech-card px-4 py-2 rounded-xl flex items-center space-x-2">
-                                <i class="fab fa-react text-2xl text-cyan-400"></i>
-                                <span class="text-sm font-medium">React</span>
-                            </div>
-                        </div>
-                        <div class="absolute top-1/4 -left-10 float-2">
-                            <div class="tech-card px-4 py-2 rounded-xl flex items-center space-x-2">
-                                <i class="fab fa-laravel text-2xl text-red-500"></i>
-                                <span class="text-sm font-medium">Laravel</span>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-10 -right-5 float-3">
-                            <div class="tech-card px-4 py-2 rounded-xl flex items-center space-x-2">
-                                <i class="fab fa-figma text-2xl text-pink-500"></i>
-                                <span class="text-sm font-medium">Figma</span>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-5 left-0 float-1">
-                            <div class="tech-card px-4 py-2 rounded-xl flex items-center space-x-2">
-                                <i class="fab fa-js text-2xl text-yellow-400"></i>
-                                <span class="text-sm font-medium">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="h-3 bg-blue-900/50 rounded-full overflow-hidden border border-blue-800">
+                <div class="progress-bar h-full rounded-full" style="width: 75%"></div>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
-            <a href="#built-with" class="flex flex-col items-center text-gray-400 hover:text-blue-400 transition-colors">
-                <span class="text-sm mb-2">Explore More</span>
-                <i class="fas fa-chevron-down animate-bounce"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Built With Section -->
-    <section id="built-with" class="py-20 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 slide-up">
-                <p class="text-blue-400 font-medium mb-2 flex items-center justify-center space-x-2">
-                    <i class="fas fa-code"></i>
-                    <span>BUILT WITH</span>
-                </p>
-                <h2 class="text-3xl md:text-4xl font-bold font-orbitron gradient-text mb-4">
-                    Website Ini Dibuat Menggunakan
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Kombinasi teknologi modern untuk menciptakan pengalaman web yang luar biasa
-                </p>
+        <!-- Countdown (Static Display) -->
+        <div class="flex justify-center gap-4 mb-10 flex-wrap">
+            <div class="countdown-box rounded-2xl p-4 min-w-[80px]">
+                <div class="text-3xl font-bold text-blue-300" id="days">02</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Hari</div>
             </div>
-
-            <!-- Tech Stack Marquee Row 1 -->
-            <div class="marquee-container mb-6">
-                <div class="marquee flex space-x-6">
-                    <!-- First Set -->
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-html5 text-3xl text-orange-500"></i>
-                        <div>
-                            <p class="font-bold">HTML5</p>
-                            <p class="text-xs text-gray-400">Structure</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
-                        <div>
-                            <p class="font-bold">CSS3</p>
-                            <p class="text-xs text-gray-400">Styling</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-js text-3xl text-yellow-400"></i>
-                        <div>
-                            <p class="font-bold">JavaScript</p>
-                            <p class="text-xs text-gray-400">Interactivity</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <svg class="w-8 h-8" viewBox="0 0 54 33" fill="currentColor">
-                            <path fill="#38bdf8" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"/>
-                        </svg>
-                        <div>
-                            <p class="font-bold">TailwindCSS</p>
-                            <p class="text-xs text-gray-400">Utility-First</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-figma text-3xl text-pink-500"></i>
-                        <div>
-                            <p class="font-bold">Figma</p>
-                            <p class="text-xs text-gray-400">UI Design</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-react text-3xl text-cyan-400"></i>
-                        <div>
-                            <p class="font-bold">React</p>
-                            <p class="text-xs text-gray-400">Framework</p>
-                        </div>
-                    </div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-html5 text-3xl text-orange-500"></i>
-                        <div>
-                            <p class="font-bold">HTML5</p>
-                            <p class="text-xs text-gray-400">Structure</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
-                        <div>
-                            <p class="font-bold">CSS3</p>
-                            <p class="text-xs text-gray-400">Styling</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-js text-3xl text-yellow-400"></i>
-                        <div>
-                            <p class="font-bold">JavaScript</p>
-                            <p class="text-xs text-gray-400">Interactivity</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <svg class="w-8 h-8" viewBox="0 0 54 33" fill="currentColor">
-                            <path fill="#38bdf8" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"/>
-                        </svg>
-                        <div>
-                            <p class="font-bold">TailwindCSS</p>
-                            <p class="text-xs text-gray-400">Utility-First</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-figma text-3xl text-pink-500"></i>
-                        <div>
-                            <p class="font-bold">Figma</p>
-                            <p class="text-xs text-gray-400">UI Design</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-react text-3xl text-cyan-400"></i>
-                        <div>
-                            <p class="font-bold">React</p>
-                            <p class="text-xs text-gray-400">Framework</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="countdown-box rounded-2xl p-4 min-w-[80px]">
+                <div class="text-3xl font-bold text-blue-300" id="hours">14</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Jam</div>
             </div>
-
-            <!-- Tech Stack Marquee Row 2 (Reverse) -->
-            <div class="marquee-container">
-                <div class="marquee marquee-reverse flex space-x-6">
-                    <!-- First Set -->
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-php text-3xl text-indigo-400"></i>
-                        <div>
-                            <p class="font-bold">PHP</p>
-                            <p class="text-xs text-gray-400">Backend</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-laravel text-3xl text-red-500"></i>
-                        <div>
-                            <p class="font-bold">Laravel</p>
-                            <p class="text-xs text-gray-400">Framework</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white">
-                            <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.572 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/>
-                        </svg>
-                        <div>
-                            <p class="font-bold">Next.js</p>
-                            <p class="text-xs text-gray-400">React Framework</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-node-js text-3xl text-green-500"></i>
-                        <div>
-                            <p class="font-bold">Node.js</p>
-                            <p class="text-xs text-gray-400">Runtime</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fas fa-database text-3xl text-blue-400"></i>
-                        <div>
-                            <p class="font-bold">MySQL</p>
-                            <p class="text-xs text-gray-400">Database</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-git-alt text-3xl text-orange-600"></i>
-                        <div>
-                            <p class="font-bold">Git</p>
-                            <p class="text-xs text-gray-400">Version Control</p>
-                        </div>
-                    </div>
-                    <!-- Duplicate -->
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-php text-3xl text-indigo-400"></i>
-                        <div>
-                            <p class="font-bold">PHP</p>
-                            <p class="text-xs text-gray-400">Backend</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-laravel text-3xl text-red-500"></i>
-                        <div>
-                            <p class="font-bold">Laravel</p>
-                            <p class="text-xs text-gray-400">Framework</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white">
-                            <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.572 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/>
-                        </svg>
-                        <div>
-                            <p class="font-bold">Next.js</p>
-                            <p class="text-xs text-gray-400">React Framework</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-node-js text-3xl text-green-500"></i>
-                        <div>
-                            <p class="font-bold">Node.js</p>
-                            <p class="text-xs text-gray-400">Runtime</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fas fa-database text-3xl text-blue-400"></i>
-                        <div>
-                            <p class="font-bold">MySQL</p>
-                            <p class="text-xs text-gray-400">Database</p>
-                        </div>
-                    </div>
-                    <div class="tech-card px-6 py-4 rounded-2xl flex items-center space-x-3 min-w-fit">
-                        <i class="fab fa-git-alt text-3xl text-orange-600"></i>
-                        <div>
-                            <p class="font-bold">Git</p>
-                            <p class="text-xs text-gray-400">Version Control</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="countdown-box rounded-2xl p-4 min-w-[80px]">
+                <div class="text-3xl font-bold text-blue-300" id="minutes">32</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Menit</div>
+            </div>
+            <div class="countdown-box rounded-2xl p-4 min-w-[80px]">
+                <div class="text-3xl font-bold text-blue-300" id="seconds">45</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">Detik</div>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="slide-left">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Workspace" class="rounded-3xl w-full border border-blue-500/30">
-                        
-                        <!-- Stats Card -->
-                        <div class="absolute -bottom-8 -right-8 card-glass rounded-2xl p-6">
-                            <div class="grid grid-cols-2 gap-6">
-                                <div class="text-center">
-                                    <p class="text-3xl font-bold font-orbitron gradient-text">3+</p>
-                                    <p class="text-sm text-gray-400">Years Exp</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-3xl font-bold font-orbitron gradient-text">50+</p>
-                                    <p class="text-sm text-gray-400">Projects</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Location Badge -->
-                        <div class="absolute -top-4 -left-4 card-glass rounded-xl px-4 py-2 flex items-center space-x-2">
-                            <div class="w-3 h-3 bg-green-500 rounded-full pin-pulse"></div>
-                            <span class="text-sm">Bandung, Indonesia</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-right">
-                    <p class="text-blue-400 font-medium mb-2 flex items-center space-x-2">
-                        <i class="fas fa-user-astronaut"></i>
-                        <span>ABOUT ME</span>
-                    </p>
-                    <h2 class="text-3xl md:text-4xl font-bold font-orbitron mb-6">
-                        <span class="gradient-text">Swagger Design</span> & SwagShop
-                    </h2>
-                    
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                        Saya adalah seorang <strong class="text-blue-400">Creative Designer</strong> dan 
-                        <strong class="text-purple-400">Full Stack Web Developer</strong> yang berbasis di 
-                        <strong class="text-cyan-400">Bandung, Kec. Dayeuhkolot</strong>.
-                    </p>
-
-                    <div class="space-y-4 mb-8">
-                        <div class="card-glass rounded-xl p-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-palette text-xl text-blue-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Desain Grafis - Image</h4>
-                                    <p class="text-sm text-gray-400">SVG, PNG, dan format lainnya menggunakan Canva, Alight Motion, CapCut & tools Android.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-glass rounded-xl p-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-laptop-code text-xl text-purple-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Desain Web & Frontend</h4>
-                                    <p class="text-sm text-gray-400">UI/UX Design dengan Figma, pengembangan dengan React & TailwindCSS.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-glass rounded-xl p-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-server text-xl text-cyan-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold mb-1">Full Stack Development</h4>
-                                    <p class="text-sm text-gray-400">PHP & Laravel enthusiast, juga JavaScript untuk web & WhatsApp Bot.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#contact" class="gradient-btn inline-flex items-center space-x-2 px-8 py-4 rounded-full font-semibold">
-                        <i class="fas fa-rocket"></i>
-                        <span>Let's Collaborate</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 slide-up">
-                <p class="text-blue-400 font-medium mb-2 flex items-center justify-center space-x-2">
-                    <i class="fas fa-cogs"></i>
-                    <span>SERVICES</span>
-                </p>
-                <h2 class="text-3xl md:text-4xl font-bold font-orbitron gradient-text mb-4">
-                    Layanan yang Tersedia
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Berbagai layanan kreatif untuk memenuhi kebutuhan digital dan fisik Anda
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="card-glass rounded-2xl p-8 slide-up">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-image text-3xl text-blue-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">Desain Grafis</h3>
-                    <p class="text-gray-400 mb-6">
-                        Desain visual berkualitas tinggi untuk berbagai kebutuhan media sosial dan branding.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-400"></i><span>Logo & Branding</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-400"></i><span>Social Media Content</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-400"></i><span>SVG & PNG Export</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-400"></i><span>Motion Graphics</span></li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="card-glass rounded-2xl p-8 slide-up" style="transition-delay: 0.1s;">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-code text-3xl text-purple-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">Web Development</h3>
-                    <p class="text-gray-400 mb-6">
-                        Pengembangan website modern dengan teknologi terkini dan performa optimal.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-purple-400"></i><span>PHP & Laravel</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-purple-400"></i><span>React & Next.js</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-purple-400"></i><span>Responsive Design</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-purple-400"></i><span>API Integration</span></li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="card-glass rounded-2xl p-8 slide-up" style="transition-delay: 0.2s;">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fab fa-whatsapp text-3xl text-green-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">WhatsApp Bot</h3>
-                    <p class="text-gray-400 mb-6">
-                        Bot WhatsApp custom untuk otomatisasi bisnis dan sistem penjualan.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-green-400"></i><span>Auto Reply System</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-green-400"></i><span>Order Management</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-green-400"></i><span>Broadcast Message</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-green-400"></i><span>Custom Features</span></li>
-                    </ul>
-                </div>
-
-                <!-- Service 4 - Bouquet Design -->
-                <div class="card-glass rounded-2xl p-8 slide-up" style="transition-delay: 0.3s;">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-spa text-3xl text-pink-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">Desain Buket Bunga</h3>
-                    <p class="text-gray-400 mb-6">
-                        Desain buket bunga cantik untuk berbagai momen spesial Anda.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-pink-400"></i><span>Wedding Bouquet</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-pink-400"></i><span>Birthday Special</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-pink-400"></i><span>Anniversary Gift</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-pink-400"></i><span>Custom Design</span></li>
-                    </ul>
-                </div>
-
-                <!-- Service 5 - Food Design -->
-                <div class="card-glass rounded-2xl p-8 slide-up" style="transition-delay: 0.4s;">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-birthday-cake text-3xl text-orange-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">Desain Makanan</h3>
-                    <p class="text-gray-400 mb-6">
-                        Desain kreatif untuk produk makanan termasuk desain fisik dan packaging.
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-orange-400"></i><span>Food Packaging</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-orange-400"></i><span>Menu Design</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-orange-400"></i><span>Physical Design</span></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-check text-orange-400"></i><span>Branding</span></li>
-                    </ul>
-                </div>
-
-                <!-- Shipping Info Card -->
-                <div class="card-glass rounded-2xl p-8 slide-up bg-gradient-to-br from-blue-900/50 to-purple-900/50" style="transition-delay: 0.5s;">
-                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shipping-fast text-3xl text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 font-orbitron">Pengiriman</h3>
-                    <p class="text-gray-400 mb-6">
-                        Untuk produk fisik (buket bunga & makanan), kami melayani pengiriman ke seluruh Pulau Jawa.
-                    </p>
-                    <div class="flex items-center space-x-3 p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
-                        <i class="fas fa-map-marker-alt text-2xl text-blue-400"></i>
-                        <div>
-                            <p class="font-bold">Lokasi Kami</p>
-                            <p class="text-sm text-gray-400">Bandung, Kec. Dayeuhkolot</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 slide-up">
-                <p class="text-blue-400 font-medium mb-2 flex items-center justify-center space-x-2">
-                    <i class="fas fa-folder-open"></i>
-                    <span>PORTFOLIO</span>
-                </p>
-                <h2 class="text-3xl md:text-4xl font-bold font-orbitron gradient-text mb-4">
-                    Karya Terbaik
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio items -->
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=300&fit=crop" alt="Web Design" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-blue-300 text-sm">Web Development</span>
-                            <h3 class="text-xl font-bold font-orbitron">E-Commerce Platform</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up" style="transition-delay: 0.1s;">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Graphic Design" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-purple-300 text-sm">Graphic Design</span>
-                            <h3 class="text-xl font-bold font-orbitron">Brand Identity</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up" style="transition-delay: 0.2s;">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop" alt="Mobile App" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-cyan-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-cyan-300 text-sm">UI/UX Design</span>
-                            <h3 class="text-xl font-bold font-orbitron">Mobile App</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up" style="transition-delay: 0.3s;">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=400&h=300&fit=crop" alt="Bouquet" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-pink-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-pink-300 text-sm">Physical Product</span>
-                            <h3 class="text-xl font-bold font-orbitron">Flower Bouquet</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up" style="transition-delay: 0.4s;">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop" alt="Food" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-orange-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-orange-300 text-sm">Food Design</span>
-                            <h3 class="text-xl font-bold font-orbitron">Packaging Design</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-glass rounded-2xl overflow-hidden group slide-up" style="transition-delay: 0.5s;">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop" alt="Bot" class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-green-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                            <span class="text-green-300 text-sm">Automation</span>
-                            <h3 class="text-xl font-bold font-orbitron">WhatsApp Bot</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 slide-up">
-                <p class="text-blue-400 font-medium mb-2 flex items-center justify-center space-x-2">
-                    <i class="fas fa-envelope"></i>
-                    <span>CONTACT</span>
-                </p>
-                <h2 class="text-3xl md:text-4xl font-bold font-orbitron gradient-text mb-4">
-                    Mari Terhubung
-                </h2>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="slide-left">
-                    <h3 class="text-2xl font-bold font-orbitron mb-6">Get In Touch</h3>
-                    <p class="text-gray-400 mb-8">
-                        Siap untuk memulai proyek bersama? Hubungi saya melalui media sosial atau isi form di samping.
-                    </p>
-
-                    <div class="space-y-4">
-                        <a href="#" class="card-glass rounded-xl p-4 flex items-center space-x-4 hover:border-pink-500/50 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-orange-500 flex items-center justify-center">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Instagram</p>
-                                <p class="text-sm text-gray-400">@swagger.design</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card-glass rounded-xl p-4 flex items-center space-x-4 hover:border-gray-400/50 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center">
-                                <i class="fab fa-github text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">GitHub</p>
-                                <p class="text-sm text-gray-400">github.com/reyhan</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card-glass rounded-xl p-4 flex items-center space-x-4 hover:border-green-500/50 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center">
-                                <i class="fab fa-whatsapp text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">WhatsApp Business</p>
-                                <p class="text-sm text-gray-400">+62 xxx-xxxx-xxxx</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card-glass rounded-xl p-4 flex items-center space-x-4 hover:border-blue-500/50 transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
-                                <i class="fas fa-globe text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium">Website</p>
-                                <p class="text-sm text-gray-400">swagshop.my.id</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="slide-right">
-                    <form class="card-glass rounded-2xl p-8 space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Nama Lengkap</label>
-                            <input type="text" class="w-full px-4 py-3 bg-gray-800/50 dark:bg-gray-800/50 border border-blue-500/30 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all" placeholder="Masukkan nama">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 bg-gray-800/50 border border-blue-500/30 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all" placeholder="nama@email.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Layanan</label>
-                            <select class="w-full px-4 py-3 bg-gray-800/50 border border-blue-500/30 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all">
-                                <option>Pilih Layanan</option>
-                                <option>Desain Grafis</option>
-                                <option>Web Development</option>
-                                <option>WhatsApp Bot</option>
-                                <option>Desain Buket Bunga</option>
-                                <option>Desain Makanan</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Pesan</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-800/50 border border-blue-500/30 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all resize-none" placeholder="Ceritakan kebutuhan Anda..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full gradient-btn py-4 rounded-xl font-semibold flex items-center justify-center space-x-2">
-                            <i class="fas fa-paper-plane"></i>
-                            <span>Kirim Pesan</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="relative z-10 pt-20 pb-10">
-        <!-- Divider Line -->
-        <div class="max-w-6xl mx-auto px-12 mb-16">
-            <div class="footer-divider"></div>
+        <!-- Notify Form -->
+        <div class="max-w-md mx-auto mb-10">
+            <p class="text-gray-400 mb-4">Dapatkan notifikasi saat website sudah aktif:</p>
+            <form class="flex gap-2 flex-col sm:flex-row">
+                <input 
+                    type="email" 
+                    placeholder="Masukkan email Anda" 
+                    class="flex-1 px-5 py-3 rounded-full bg-blue-900/30 border border-blue-700 focus:border-blue-400 outline-none transition-all text-white placeholder-gray-500"
+                >
+                <button 
+                    type="submit" 
+                    class="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 font-semibold hover:from-blue-500 hover:to-purple-500 transition-all hover:scale-105 flex items-center justify-center gap-2"
+                >
+                    <i class="fas fa-bell"></i>
+                    <span>Notify Me</span>
+                </button>
+            </form>
         </div>
 
-        <!-- Social Media Section -->
-        <div class="card-glass mx-6 lg:mx-auto max-w-4xl rounded-3xl p-10 mb-16">
-            <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold font-orbitron gradient-text mb-2">Connect With Me</h3>
-                <p class="text-gray-400">Follow saya di media sosial untuk update terbaru</p>
-            </div>
-            
-            <div class="flex justify-center items-center space-x-6 md:space-x-10">
-                <a href="#" class="social-hover instagram w-16 h-16 rounded-2xl card-glass flex items-center justify-center text-gray-400 text-2xl">
+        <!-- Social Media -->
+        <div class="mb-8">
+            <p class="text-gray-400 mb-4">Tetap terhubung dengan kami:</p>
+            <div class="flex justify-center gap-4">
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-xl">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="social-hover github w-16 h-16 rounded-2xl card-glass flex items-center justify-center text-gray-400 text-2xl">
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-xl hover:bg-gray-700">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" class="social-hover whatsapp w-16 h-16 rounded-2xl card-glass flex items-center justify-center text-gray-400 text-2xl">
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-xl">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="social-hover globe w-16 h-16 rounded-2xl card-glass flex items-center justify-center text-gray-400 text-2xl">
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-xl">
                     <i class="fas fa-globe"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Divider Line -->
-        <div class="max-w-6xl mx-auto px-12 mb-10">
-            <div class="footer-divider"></div>
+        <!-- Working On -->
+        <div class="border-t border-blue-800/50 pt-8 mt-8">
+            <p class="text-gray-500 text-sm flex items-center justify-center gap-2">
+                <span>Swagger Design sedang bekerja keras</span>
+                <span class="flex gap-1">
+                    <span class="loading-dot w-2 h-2 bg-blue-400 rounded-full inline-block"></span>
+                    <span class="loading-dot w-2 h-2 bg-blue-400 rounded-full inline-block"></span>
+                    <span class="loading-dot w-2 h-2 bg-blue-400 rounded-full inline-block"></span>
+                </span>
+            </p>
         </div>
 
-        <!-- Copyright -->
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <div class="w-10 h-10 rounded-xl gradient-btn flex items-center justify-center font-bold font-orbitron">S</div>
-                    <div>
-                        <span class="font-bold font-orbitron">SwagShop</span>
-                        <span class="text-gray-500">.my.id</span>
-                    </div>
-                </div>
-
-                <p class="text-gray-400 text-sm text-center mb-4 md:mb-0">
-                    © 2024 Reyhan - Swagger Design. All Rights Reserved.
-                </p>
-
-                <p class="text-gray-500 text-sm flex items-center space-x-2">
-                    <i class="fas fa-map-marker-alt text-blue-400"></i>
-                    <span>Bandung, Dayeuhkolot</span>
-                </p>
-            </div>
+        <!-- Footer -->
+        <div class="mt-8 text-gray-600 text-sm">
+            <p>© 2024 SwagShop by Reyhan | Swagger Design</p>
+            <p class="mt-1">Bandung, Dayeuhkolot</p>
         </div>
-    </footer>
+    </div>
 
     <script>
         // Create Stars
         function createStars() {
             const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 150; i++) {
+            const starCount = 150;
+
+            for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
+                
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
                 star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
-                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDelay = Math.random() * 5 + 's';
+                
                 starsContainer.appendChild(star);
             }
         }
+
         createStars();
 
-        // Typing Effect
-        const texts = ["Full Stack Developer", "Graphic Designer", "UI/UX Designer", "WhatsApp Bot Developer", "Creative Director"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typeText = document.getElementById('typeText');
+        // Countdown Timer
+        function updateCountdown() {
+            // Set target date (2 days from now for demo)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 2);
+            targetDate.setHours(targetDate.getHours() + 14);
+            targetDate.setMinutes(targetDate.getMinutes() + 32);
 
-        function type() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typeText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typeText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
+            function update() {
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                }
             }
 
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-
-            const speed = isDeleting ? 50 : 100;
-            setTimeout(type, speed);
-        }
-        type();
-
-        // Theme Toggle
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const themeToggleMobile = document.getElementById('themeToggleMobile');
-
-        function toggleTheme() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                html.classList.add('light');
-                document.querySelectorAll('.dark-icon').forEach(el => el.classList.add('hidden'));
-                document.querySelectorAll('.light-icon').forEach(el => el.classList.remove('hidden'));
-            } else {
-                html.classList.remove('light');
-                html.classList.add('dark');
-                document.querySelectorAll('.dark-icon').forEach(el => el.classList.remove('hidden'));
-                document.querySelectorAll('.light-icon').forEach(el => el.classList.add('hidden'));
-            }
+            update();
+            setInterval(update, 1000);
         }
 
-        themeToggle.addEventListener('click', toggleTheme);
-        themeToggleMobile.addEventListener('click', toggleTheme);
-
-        // Mobile Menu
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
-                ? '<i class="fas fa-bars"></i>' 
-                : '<i class="fas fa-times"></i>';
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.slide-up, .slide-left, .slide-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+        updateCountdown();
 
         // Form Submit
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
-            this.reset();
-        });
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-glass');
+            const email = this.querySelector('input').value;
+            if (email) {
+                alert('Terima kasih! Kami akan mengirim notifikasi ke ' + email + ' saat website sudah aktif.');
+                this.querySelector('input').value = '';
             }
         });
+
+        // Add more shooting stars periodically
+        function addShootingStar() {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.top = Math.random() * 30 + '%';
+            star.style.right = Math.random() * 50 + '%';
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        setInterval(addShootingStar, 5000);
     </script>
 </body>
-    </html
+</html>
